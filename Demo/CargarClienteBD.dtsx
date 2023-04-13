@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-71CP8RV"
   DTS:CreatorName="DESKTOP-71CP8RV\ricar"
-  DTS:DTSID="{C58DF9D5-4B3A-4BF8-B1DA-9A869F3DCD42}"
+  DTS:DTSID="{07925C85-D5FE-405E-A182-BA342E9F25BC}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5131.0"
   DTS:LocaleID="13322"
-  DTS:ObjectName="Package2"
+  DTS:ObjectName="CargarClienteBD"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{3191CDB5-011F-4658-9D0B-A3637E7023D4}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{5C901A6F-E684-4383-A535-7B4025ED9286}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Clientes]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{92FE9C33-482F-46DA-9700-6C87976E64B7}"
+      DTS:DTSID="{06325794-0361-4534-AD24-785D263E8E2E}"
       DTS:ObjectName="Clientes">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::FullURL]</DTS:PropertyExpression>
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ID"
-              DTS:DTSID="{A21E3153-A8B2-48C2-AD6D-388362C36079}"
+              DTS:DTSID="{8199720D-B79D-4819-9086-9B955E50E454}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NOMBRE"
-              DTS:DTSID="{996ACCF9-8380-47E7-93C6-BAFFE80746D0}"
+              DTS:DTSID="{3DB0BC7C-6746-4064-93F5-D789B3AF7BDE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="APELLIDO1"
-              DTS:DTSID="{181D6BBC-A491-4EF9-8E07-80FA61447713}"
+              DTS:DTSID="{CD74A74F-A88F-4804-8EE4-F82327B0579F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,17 +68,58 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="FECHA"
-              DTS:DTSID="{5B1E3AD0-B3E4-49BC-AA42-781810D438FF}"
+              DTS:DTSID="{80F48E4C-6F02-409F-8A5D-14FDB051F172}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Sample1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8265FB5B-2747-4C26-A12E-11ED0C36DDEE}"
+      DTS:ObjectName="LocalHost.Sample1">
+      <DTS:PropertyExpression
+        DTS:Name="InitialCatalog">@[User::Database]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Sample1;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-CargarClienteBD-{8265FB5B-2747-4C26-A12E-11ED0C36DDEE}LocalHost.Sample1;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B75BA937-0A4B-4785-94A2-CE826E0ECAC2}"
+      DTS:DTSID="{853E5356-442C-4CA7-B61D-A777B162B0F9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Database">
+      <DTS:VariableValue
+        DTS:DataType="8">Sample1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BBA31FB7-8453-42B8-9E27-B71A229908E9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Databases">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{27896A80-8403-4115-8A7D-91F4A9F1FE90}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
@@ -87,7 +128,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D232C8CE-0FF0-4EDB-BC9C-1E8D7BD776EF}"
+      DTS:DTSID="{6236E5A4-C630-40D8-82AF-D34E0CE5B22A}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Project::URL] +  @[User::FileName]"
       DTS:IncludeInDebugDump="2345"
@@ -102,7 +143,7 @@
       DTS:refId="Package\Borrados iniciales"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{9B29FD2D-6F6C-4D0F-B8EC-2C17A33EF331}"
+      DTS:DTSID="{B2D12B87-C5FE-4316-8E65-AD37C14E07F6}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Borrados iniciales"
@@ -119,27 +160,18 @@
       DTS:refId="Package\Contenedor de bucles Foreach"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Contenedor de bucles Foreach"
-      DTS:DTSID="{B4C4ECB1-4309-46A4-9977-D5E34BF7F3CE}"
+      DTS:DTSID="{893D150E-42E7-4F27-A3CA-59A26F90C491}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Contenedor de bucles Foreach">
       <DTS:ForEachEnumerator
-        DTS:CreationName="Microsoft.ForEachFileEnumerator"
-        DTS:DTSID="{BA2012B1-DE34-4CE2-9804-130C42BFA202}"
-        DTS:ObjectName="{BA2012B1-DE34-4CE2-9804-130C42BFA202}">
-        <DTS:PropertyExpression
-          DTS:Name="Directory">@[$Project::URL]</DTS:PropertyExpression>
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{D85D336C-9981-4522-B191-D1FFAA6AAE1C}"
+        DTS:ObjectName="{D85D336C-9981-4522-B191-D1FFAA6AAE1C}">
         <DTS:ObjectData>
-          <ForEachFileEnumeratorProperties>
-            <FEFEProperty
-              Folder="D:\Proyectos Integrations Services\Demo\bd\SSIS Samples\" />
-            <FEFEProperty
-              FileSpec="*.TXT" />
-            <FEFEProperty
-              FileNameRetrievalType="1" />
-            <FEFEProperty
-              Recurse="0" />
-          </ForEachFileEnumeratorProperties>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::Databases" />
         </DTS:ObjectData>
       </DTS:ForEachEnumerator>
       <DTS:Variables />
@@ -148,7 +180,7 @@
           DTS:refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Tarea Flujo de datos"
-          DTS:DTSID="{E7B465DD-F8EA-452E-82F6-83EA91D949F3}"
+          DTS:DTSID="{36102F29-A6CA-483A-A912-57E1872C441D}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Tarea Flujo de datos"
@@ -158,80 +190,6 @@
             <pipeline
               version="1">
               <components>
-                <component
-                  refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada"
-                  componentClassID="Microsoft.DerivedColumn"
-                  contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
-                  description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
-                  name="Columna derivada"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]"
-                      description="Entrada en la transformación Columna derivada"
-                      name="Entrada de columna derivada">
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada]"
-                      description="Salida predeterminada de la transformación Columna derivada"
-                      exclusionGroup="1"
-                      name="Salida de columna derivada"
-                      synchronousInputId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[FileName]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Cálculo"
-                          errorRowDisposition="FailComponent"
-                          length="28"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[FileName]"
-                          name="FileName"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Expresión de columna derivada"
-                              name="Expression">@[User::FileName]</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Expresión descriptiva de columna derivada"
-                              expressionType="Notify"
-                              name="FriendlyExpression">@[User::FileName]</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada]"
-                      description="Salida de error de la transformación Columna derivada"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Salida de error de columna derivada"
-                      synchronousInputId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
                 <component
                   refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB"
                   componentClassID="Microsoft.OLEDBDestination"
@@ -248,7 +206,7 @@
                     <property
                       dataType="System.String"
                       description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                      name="OpenRowset">[ClienteFileName]</property>
+                      name="OpenRowset">[dbo].[Cliente]</property>
                     <property
                       dataType="System.String"
                       description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -311,7 +269,7 @@
                           cachedLength="50"
                           cachedName="ID"
                           externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[ID]"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].Columns[ID]" />
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ID]" />
                         <inputColumn
                           refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[NOMBRE]"
                           cachedCodepage="1252"
@@ -319,7 +277,7 @@
                           cachedLength="50"
                           cachedName="NOMBRE"
                           externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[NOMBRE]"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].Columns[NOMBRE]" />
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[NOMBRE]" />
                         <inputColumn
                           refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[APELLIDO1]"
                           cachedCodepage="1252"
@@ -327,7 +285,7 @@
                           cachedLength="50"
                           cachedName="APELLIDO1"
                           externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[APELLIDO1]"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].Columns[APELLIDO1]" />
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[APELLIDO1]" />
                         <inputColumn
                           refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[FECHA]"
                           cachedCodepage="1252"
@@ -335,14 +293,7 @@
                           cachedLength="50"
                           cachedName="FECHA"
                           externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[FECHA]"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].Columns[FECHA]" />
-                        <inputColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[FileName]"
-                          cachedDataType="wstr"
-                          cachedLength="28"
-                          cachedName="FileName"
-                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[FileName]"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[FileName]" />
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FECHA]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -370,11 +321,6 @@
                           dataType="str"
                           length="50"
                           name="FECHA" />
-                        <externalMetadataColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[FileName]"
-                          dataType="wstr"
-                          length="28"
-                          name="FileName" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -404,147 +350,133 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes"
-                  componentClassID="Microsoft.FlatFileSource"
-                  contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
-                  description="Origen de archivo plano"
-                  localeId="13322"
-                  name="OrigenClientes"
+                  refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origen de OLE DB"
+                  name="Origen de OLE DB"
                   usesDispositions="true"
-                  version="1">
+                  version="7">
                   <properties>
                     <property
-                      dataType="System.Boolean"
-                      description="Especifica si las columnas de longitud cero se tratan como NULL."
-                      name="RetainNulls">false</property>
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
                     <property
                       dataType="System.String"
-                      description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
-                      name="FileNameColumnName"></property>
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[Cliente]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variable que contiene el comando SQL para ejecutar."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Asignaciones entre los parámetros del comando SQL y las variables."
+                      name="ParameterMapping"></property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Clientes]"
-                      connectionManagerRefId="Package.ConnectionManagers[Clientes]"
-                      name="FlatFileConnection" />
+                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Sample1]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Sample1]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano]"
-                      name="Salida de origen de archivo plano">
+                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                      name="Salida de origen de OLE DB">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].Columns[ID]"
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ID]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].ExternalColumns[ID]"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ID]"
                           length="50"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].Columns[ID]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ID]"
                           name="ID"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indica si los datos están en formato binario."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
+                          truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].Columns[NOMBRE]"
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[NOMBRE]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].ExternalColumns[NOMBRE]"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[NOMBRE]"
                           length="50"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].Columns[NOMBRE]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[NOMBRE]"
                           name="NOMBRE"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indica si los datos están en formato binario."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
+                          truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].Columns[APELLIDO1]"
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[APELLIDO1]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].ExternalColumns[APELLIDO1]"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[APELLIDO1]"
                           length="50"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].Columns[APELLIDO1]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[APELLIDO1]"
                           name="APELLIDO1"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indica si los datos están en formato binario."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
+                          truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].Columns[FECHA]"
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FECHA]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].ExternalColumns[FECHA]"
+                          externalMetadataColumnId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FECHA]"
                           length="50"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].Columns[FECHA]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FECHA]"
                           name="FECHA"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indica si los datos están en formato binario."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].ExternalColumns[ID]"
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ID]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="ID" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].ExternalColumns[NOMBRE]"
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[NOMBRE]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="NOMBRE" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].ExternalColumns[APELLIDO1]"
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[APELLIDO1]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="APELLIDO1" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano].ExternalColumns[FECHA]"
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FECHA]"
                           codePage="1252"
                           dataType="str"
                           length="50"
@@ -552,27 +484,48 @@
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de error de origen de archivo plano]"
+                      refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
                       isErrorOut="true"
-                      name="Salida de error de origen de archivo plano">
+                      name="Salida de error de origen de OLE DB">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ID]"
                           codePage="1252"
-                          dataType="text"
-                          description="Columna de salida de error de origen de archivo plano"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
-                          name="Columna de salida de error de origen de archivo plano" />
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ID]"
+                          name="ID" />
                         <outputColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[NOMBRE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[NOMBRE]"
+                          name="NOMBRE" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[APELLIDO1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[APELLIDO1]"
+                          name="APELLIDO1" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[FECHA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[FECHA]"
+                          name="FECHA" />
+                        <outputColumn
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          lineageId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -583,15 +536,10 @@
               </components>
               <paths>
                 <path
-                  refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos.Paths[Salida de columna derivada]"
+                  refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
                   endId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
-                  name="Salida de columna derivada"
-                  startId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada]" />
-                <path
-                  refId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos.Paths[Salida de origen de archivo plano]"
-                  endId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]"
-                  name="Salida de origen de archivo plano"
-                  startId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes.Outputs[Salida de origen de archivo plano]" />
+                  name="Salida de origen de OLE DB"
+                  startId="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -600,21 +548,51 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{CEF6A68A-DB4D-4733-B98D-A25FFB4D5830}"
-          DTS:ObjectName="{CEF6A68A-DB4D-4733-B98D-A25FFB4D5830}"
+          DTS:DTSID="{DA4A717B-8EF0-46F5-BCE1-640D7FE848A9}"
+          DTS:ObjectName="{DA4A717B-8EF0-46F5-BCE1-640D7FE848A9}"
           DTS:ValueIndex="0"
-          DTS:VariableName="User::FileName" />
+          DTS:VariableName="User::Database" />
       </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{41F9397F-3FB6-407F-AB1A-6BB303A590CB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C81DAF7F-6BE7-4B8E-8AEE-6503305EC393}"
+          SQLTask:SqlStatementSource="SELECT&#xA;      [Database]&#xA;FROM [EjemploSSIS]..[BILATAM_Config]"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Databases" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{944EA152-7787-45A0-8168-019C61636235}"
+      DTS:DTSID="{79FEA379-80A4-4719-9FC1-C9ABCD5A029F}"
       DTS:From="Package\Borrados iniciales"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
+      DTS:To="Package\Tarea Ejecutar SQL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{44D3B96F-6862-48DA-B2E6-1AFD7DD258B2}"
+      DTS:From="Package\Tarea Ejecutar SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
       DTS:To="Package\Contenedor de bucles Foreach" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -628,7 +606,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="160.8,41.6"
           Id="Package\Borrados iniciales"
@@ -636,40 +614,78 @@
         <NodeLayout
           Size="173.6,41.6"
           Id="Package\Contenedor de bucles Foreach\Tarea Flujo de datos"
-          TopLeft="5.5,5.5" />
+          TopLeft="19.527777011334,23.8444443168795" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="204.8,102.4"
-          Size="204.8,145.6"
+          PanelSize="209.6,116.8"
+          Size="209.6,160"
           Id="Package\Contenedor de bucles Foreach"
           TopLeft="334.999981696408,214.933331838714" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="318.055538177767,138.777777104797" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="341.233319082029,96.1999996203184">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="96.1666626143788,118.733332218395"
+              EndConnector="62.022219095738,42.5777774844788"
               Start="0,0"
-              End="96.1666626143788,111.233332218395">
+              End="62.022219095738,35.0777774844788">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,55.3666661091976" />
+                    End="0,17.2888887422394" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,55.3666661091976"
-                    Point2="0,59.3666661091976"
-                    Point3="4,59.3666661091976" />
+                    Point1="0,17.2888887422394"
+                    Point2="0,21.2888887422394"
+                    Point3="4,21.2888887422394" />
                   <mssgle:LineSegment
-                    End="92.1666626143788,59.3666661091976" />
+                    End="58.022219095738,21.2888887422394" />
                   <mssgle:CubicBezierSegment
-                    Point1="92.1666626143788,59.3666661091976"
-                    Point2="96.1666626143788,59.3666661091976"
-                    Point3="96.1666626143788,63.3666661091976" />
+                    Point1="58.022219095738,21.2888887422394"
+                    Point2="62.022219095738,21.2888887422394"
+                    Point3="62.022219095738,25.2888887422394" />
                   <mssgle:LineSegment
-                    End="96.1666626143788,111.233332218395" />
+                    End="62.022219095738,35.0777774844788" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="403.255538177767,180.377777104797">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.5444435186411,34.5555547339168"
+              Start="0,0"
+              End="36.5444435186411,27.0555547339168">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.2777773669584" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.2777773669584"
+                    Point2="0,17.2777773669584"
+                    Point3="4,17.2777773669584" />
+                  <mssgle:LineSegment
+                    End="32.5444435186411,17.2777773669584" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.5444435186411,17.2777773669584"
+                    Point2="36.5444435186411,17.2777773669584"
+                    Point3="36.5444435186411,21.2777773669584" />
+                  <mssgle:LineSegment
+                    End="36.5444435186411,27.0555547339168" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -685,79 +701,41 @@
     design-time-name="Package\Contenedor de bucles Foreach\Tarea Flujo de datos">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="147.2,41.6"
-          Id="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\OrigenClientes"
-          TopLeft="309.166649774545,38.9999997287988" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="168.8,41.6"
           Id="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB"
           TopLeft="260.833319082029,294.666664617591" />
         <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Columna derivada"
-          TopLeft="280.833317989277,173.333332127995" />
+          Size="164.8,41.6"
+          Id="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB"
+          TopLeft="164.166657696996,103.999999276797" />
         <EdgeLayout
-          Id="Package\Contenedor de bucles Foreach\Tarea Flujo de datos.Paths[Salida de origen de archivo plano]"
-          TopLeft="382.766649774545,80.5999997287988">
+          Id="Package\Contenedor de bucles Foreach\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
+          TopLeft="246.566657696996,145.599999276797">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-20.7333317852681,92.7333323991961"
+              EndConnector="98.6666613850331,149.066665340794"
               Start="0,0"
-              End="-20.7333317852681,85.2333323991961">
+              End="98.6666613850331,141.566665340794">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.3666661995981" />
+                    End="0,70.533332670397" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,42.3666661995981"
-                    Point2="0,46.3666661995981"
-                    Point3="-4,46.3666661995981" />
+                    Point1="0,70.533332670397"
+                    Point2="0,74.533332670397"
+                    Point3="4,74.533332670397" />
                   <mssgle:LineSegment
-                    End="-16.7333317852681,46.3666661995981" />
+                    End="94.6666613850331,74.533332670397" />
                   <mssgle:CubicBezierSegment
-                    Point1="-16.7333317852681,46.3666661995981"
-                    Point2="-20.7333317852681,46.3666661995981"
-                    Point3="-20.7333317852681,50.3666661995981" />
+                    Point1="94.6666613850331,74.533332670397"
+                    Point2="98.6666613850331,74.533332670397"
+                    Point3="98.6666613850331,78.533332670397" />
                   <mssgle:LineSegment
-                    End="-20.7333317852681,85.2333323991961" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Contenedor de bucles Foreach\Tarea Flujo de datos.Paths[Salida de columna derivada]"
-          TopLeft="362.033317989277,214.933332127995">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-16.7999989072483,79.733332489596"
-              Start="0,0"
-              End="-16.7999989072483,72.233332489596">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.866666244798" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.866666244798"
-                    Point2="0,39.866666244798"
-                    Point3="-4,39.866666244798" />
-                  <mssgle:LineSegment
-                    End="-12.7999989072483,39.866666244798" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-12.7999989072483,39.866666244798"
-                    Point2="-16.7999989072483,39.866666244798"
-                    Point3="-16.7999989072483,43.866666244798" />
-                  <mssgle:LineSegment
-                    End="-16.7999989072483,72.233332489596" />
+                    End="98.6666613850331,141.566665340794" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -771,6 +749,19 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de bucles Foreach\Tarea Flujo de datos\Origen de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
